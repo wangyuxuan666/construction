@@ -2,7 +2,7 @@
  * @Author: wangyuxuan 123@qq.com
  * @Date: 2025-10-02 15:05:32
  * @LastEditors: wangyuxuan 123@qq.com
- * @LastEditTime: 2025-10-02 17:00:28
+ * @LastEditTime: 2025-10-06 18:02:53
  * @FilePath: \construction\src\views\home\index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -27,7 +27,7 @@
           <div class="list_box">
             <div class="list" v-for="(v, i) in item.content" :key="i">
               <img :src="v.img" alt="" />
-              <p>{{ v.name }}</p>
+              <div class="listName">{{ v.name }}</div>
             </div>
           </div>
         </div>
@@ -50,52 +50,116 @@ export default {
           name: "推荐",
           content: [
             {
-              name: "21点",
+              name: "内容1",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容2",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容3",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
         },
         {
-          name: "德州",
+          name: "标题名称",
           content: [
             {
-              name: "21点",
+              name: "内容1",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容2",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容3",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容4",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容5",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
         },
         {
-          name: "德州",
+          name: "标题名称",
           content: [
             {
-              name: "21点",
+              name: "内容1",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容2",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
         },
         {
-          name: "德州",
+          name: "标题名称",
           content: [
             {
-              name: "21点",
+              name: "内容1",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容2",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容3",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
         },
         {
-          name: "德州",
+          name: "标题名称",
           content: [
             {
-              name: "21点",
+              name: "内容1",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容2",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容3",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容4",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
         },
         {
-          name: "德州",
+          name: "标题名称",
           content: [
             {
-              name: "21点",
+              name: "内容1",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容2",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容3",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容4",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+            {
+              name: "内容5",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
@@ -110,6 +174,7 @@ export default {
 
 <style scoped lang="less">
 .home {
+  user-select: none;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -124,7 +189,6 @@ export default {
 
     .header {
       backdrop-filter: blur(10px); /* 模糊效果 */
-      background-color: rgba(15, 81, 50, 0.2); /* 半透明背景 */
       position: absolute; /* 定位 */
       top: 0px;
       left: 0px;
@@ -185,8 +249,9 @@ export default {
           padding: 10px 10px;
           border-radius: 3px;
           box-sizing: border-box;
-          background-color: rgba(0, 0, 0, 0.2);
+          display: flex;
           .list {
+            position: relative;
             width: 200px;
             display: flex;
             flex-direction: column;
@@ -194,22 +259,43 @@ export default {
             align-content: center;
             cursor: pointer;
             transition: all 0.3s;
+            margin-right: 16px;
             &:hover {
+              transition-delay: 0.3s;
               width: 230px;
               img {
+                transition-delay: 0.3s;
                 height: 210px;
               }
+              .listName {
+                transition-delay: 0.3s;
+                color: #fff;
+                background-color: rgba(0, 0, 0, 0.7);
+              }
+            }
+            .listName {
+              position: absolute;
+              transition: all 0.3s;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              z-index: 2;
+              color: transparent;
+              background-color: transparent;
+              font-weight: 700;
+              font-size: 17px;
+              font-family: 宋体;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
             img {
               width: 100%;
               height: 180px;
-              margin-bottom: 10px;
               border-radius: 3px;
               transition: all 0.3s;
-            }
-            p {
-              text-align: center;
-              color: #fff;
+              z-index: 1;
             }
           }
         }

@@ -25,12 +25,12 @@ export default {
       linesMesh: {},
       maxParticleCount: 1000,
       particleCount: 500,
-      r: 900,
-      rHalf: 400,
+      r: 3000,
+      rHalf: 20,
       effectController: {
         showDots: true,
         showLines: true,
-        minDistance: 120,
+        minDistance: 300,
         limitConnections: false,
         maxConnections: 20,
         particleCount: 500,
@@ -276,7 +276,7 @@ export default {
 <style scoped>
 #container {
   height: 100vh;
-  background-color: #000;
-  background-image: linear-gradient(to bottom, #0d3f26, #000);
+  background-color: #111;
+  /* background-image: linear-gradient(to bottom, #0d3f26, #000); */
 }
 </style>
