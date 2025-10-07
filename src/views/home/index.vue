@@ -50,32 +50,32 @@ export default {
           name: "推荐",
           content: [
             {
-              name: "内容1",
+              name: "传统老虎机（Classic Slot）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
             {
-              name: "内容2",
+              name: "Electronic Roulette（电子轮盘）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
             {
-              name: "内容3",
+              name: "Blackjack（21点）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
         },
         {
-          name: "标题名称",
+          name: "老虎机（Slot machines）",
           content: [
             {
-              name: "内容1",
+              name: "传统老虎机（Classic Slot）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
             {
-              name: "内容2",
+              name: "累计奖池老虎机（Progressive Jackpot）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
             {
-              name: "内容3",
+              name: "技术型老虎机（Skill-based Slot）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
             {
@@ -89,77 +89,36 @@ export default {
           ],
         },
         {
-          name: "标题名称",
+          name: "电子桌面游戏（ETG）",
           content: [
             {
-              name: "内容1",
+              name: "Electronic Roulette（电子轮盘）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
             {
-              name: "内容2",
+              name: "Electronic Baccarat（电子百家乐）",
+              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            },
+             {
+              name: "Sic Bo（电子骰宝）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
         },
         {
-          name: "标题名称",
+          name: "扑克类（Poker Family）",
           content: [
             {
-              name: "内容1",
+              name: "Texas Hold’em（德州扑克）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容2",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容3",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
+            }
           ],
         },
         {
-          name: "标题名称",
+          name: "21点类（Blackjack Family）",
           content: [
             {
-              name: "内容1",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容2",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容3",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容4",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-          ],
-        },
-        {
-          name: "标题名称",
-          content: [
-            {
-              name: "内容1",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容2",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容3",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容4",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容5",
+              name: "Blackjack（21点）",
               img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
             },
           ],
@@ -202,6 +161,7 @@ export default {
       box-sizing: border-box;
       display: flex;
       justify-content: space-between;
+      z-index:10;
       .tabs {
         .tabs_item {
           cursor: pointer;
@@ -225,11 +185,13 @@ export default {
     }
     .playMenu {
       position: absolute; /* 定位 */
-      top: 85px;
-      bottom: 15px;
+      top: 0px;
+      bottom: 0px;
       left: 20px;
       right: 20px;
       overflow: auto;
+      padding-top: 70px;
+      z-index:5;
       &::-webkit-scrollbar {
         width: 0px;
       }
@@ -238,7 +200,7 @@ export default {
         .title {
           color: #fff;
           font-size: 24px;
-          font-weight: 700;
+          font-weight: 500;
           letter-spacing: 2px;
           text-shadow: 0px 0px 3px #3ace92;
           line-height: 1;

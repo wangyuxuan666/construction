@@ -18,6 +18,6 @@ export default {
 <style scoped>
 .background {
   height: 100vh;
-  background-image: linear-gradient(to bottom, #0d3f26, #000);
+  background-image: linear-gradient(to bottom, #151c19, #000);
 }
 </style>
