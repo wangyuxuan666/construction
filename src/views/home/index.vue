@@ -23,11 +23,28 @@
         <div v-for="(item, index) in playlist" :key="index" class="playBox">
           <div class="title">
             {{ item.name }}
+            <span> ( {{ item.chinaName }} ) </span>
           </div>
           <div class="list_box">
-            <div class="list" v-for="(v, i) in item.content" :key="i">
-              <img :src="v.img" alt="" />
-              <div class="listName">{{ v.name }}</div>
+            <div
+              class="list"
+              v-for="(v, i) in item.content"
+              :key="i"
+              @click="goGame(v.path)"
+            >
+              <img
+                :src="require(`../../assets/images/fm/${v.path}.jpg`)"
+                alt=""
+                class="list_img"
+              />
+              <div class="listName">
+                <h3 :style="{ fontSize: v.nameFontSize + 'px' }">
+                  {{ v.name }}
+                </h3>
+                <h5 :style="{ fontSize: v.chinaNameFontSize + 'px' }">
+                  {{ v.chinaName }}
+                </h5>
+              </div>
             </div>
           </div>
         </div>
@@ -47,87 +64,125 @@ export default {
     return {
       playlist: [
         {
-          name: "推荐",
+          chinaName: "推荐",
+          name: "REC",
           content: [
             {
-              name: "传统老虎机（Classic Slot）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "Electronic Roulette（电子轮盘）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "Blackjack（21点）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+              chinaName: "德州扑克",
+              name: "Texas Hold’em",
+              nameFontSize: 20,
+              chinaNameFontSize: 24,
+              path: "4-1",
             },
           ],
         },
         {
-          name: "老虎机（Slot machines）",
+          chinaName: "老虎机",
+          name: "Slot Machines",
           content: [
             {
-              name: "传统老虎机（Classic Slot）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+              chinaName: "传统老虎机",
+              name: "Classic Slot",
+              nameFontSize: 30,
+              chinaNameFontSize: 24,
+              path: "1-1",
             },
             {
-              name: "累计奖池老虎机（Progressive Jackpot）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+              chinaName: "累计奖池老虎机",
+              name: "Progressive Jackpot",
+              nameFontSize: 20,
+              chinaNameFontSize: 24,
+              path: "1-2",
             },
             {
-              name: "技术型老虎机（Skill-based Slot）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容4",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            },
-            {
-              name: "内容5",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+              chinaName: "技术型老虎机",
+              name: "Skill-based Slot",
+              nameFontSize: 24,
+              chinaNameFontSize: 24,
+              path: "1-3",
             },
           ],
         },
         {
-          name: "电子桌面游戏（ETG）",
+          chinaName: "街机类",
+          name: "ARCADE",
           content: [
             {
-              name: "Electronic Roulette（电子轮盘）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+              chinaName: "捕鱼大师",
+              name: "Fishing Master",
+              nameFontSize: 20,
+              chinaNameFontSize: 24,
+              path: "2-1",
             },
             {
-              name: "Electronic Baccarat（电子百家乐）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+              chinaName: "麻将",
+              name: "Mahjong",
+              nameFontSize: 30,
+              chinaNameFontSize: 24,
+              path: "2-2",
             },
-             {
-              name: "Sic Bo（电子骰宝）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+            {
+              chinaName: "打鱼大师",
+              name: "Fishing Superstars",
+              nameFontSize: 20,
+              chinaNameFontSize: 24,
+              path: "2-3",
             },
           ],
         },
         {
-          name: "扑克类（Poker Family）",
+          chinaName: "真人娱乐场",
+          name: "Live Casino",
           content: [
             {
-              name: "Texas Hold’em（德州扑克）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
-            }
+              chinaName: "百家乐",
+              name: "Baccarat",
+              nameFontSize: 30,
+              chinaNameFontSize: 24,
+              path: "3-1",
+            },
+            {
+              chinaName: "21点",
+              name: "Blackjack",
+              nameFontSize: 30,
+              chinaNameFontSize: 24,
+              path: "3-2",
+            },
+            {
+              chinaName: "轮盘游戏",
+              name: "Roulette",
+              nameFontSize: 30,
+              chinaNameFontSize: 24,
+              path: "3-3",
+            },
           ],
         },
         {
-          name: "21点类（Blackjack Family）",
+          chinaName: "德州扑克",
+          name: "Texas Hold’em",
           content: [
             {
-              name: "Blackjack（21点）",
-              img: "https://design.gemcoder.com/staticResource/echoAiSystemImages/99996e30063df92226d8d1d75a6929a8.png",
+              chinaName: "德州扑克",
+              name: "Texas Hold’em",
+              nameFontSize: 20,
+              chinaNameFontSize: 24,
+              path: "4-1",
             },
           ],
         },
       ],
     };
   },
-  methods: {},
   mounted() {},
+  methods: {
+    goGame(id) {
+      const targetRoute = this.$router.resolve({
+        path: "/game",
+        query: { id },
+      });
+      window.open(targetRoute.href, "_blank");
+    },
+  },
 };
 </script>
 
@@ -161,7 +216,7 @@ export default {
       box-sizing: border-box;
       display: flex;
       justify-content: space-between;
-      z-index:10;
+      z-index: 10;
       .tabs {
         .tabs_item {
           cursor: pointer;
@@ -191,7 +246,7 @@ export default {
       right: 20px;
       overflow: auto;
       padding-top: 70px;
-      z-index:5;
+      z-index: 5;
       &::-webkit-scrollbar {
         width: 0px;
       }
@@ -205,6 +260,10 @@ export default {
           text-shadow: 0px 0px 3px #3ace92;
           line-height: 1;
           margin-bottom: 25px;
+          span {
+            color: #eee;
+            font-size: 16px;
+          }
         }
         .list_box {
           width: 100%;
@@ -249,8 +308,14 @@ export default {
               font-size: 17px;
               font-family: 宋体;
               display: flex;
+              flex-direction: column;
               justify-content: center;
               align-items: center;
+              h3 {
+                margin-bottom: 20px;
+              }
+              h5 {
+              }
             }
             img {
               width: 100%;
@@ -258,6 +323,7 @@ export default {
               border-radius: 3px;
               transition: all 0.3s;
               z-index: 1;
+              object-fit: cover;
             }
           }
         }

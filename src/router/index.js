@@ -1,29 +1,32 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Layout from '@/layout'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Layout from "@/layout";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-let routes = [{
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login')
-  },{
-    path: '/',
-    name: 'Home',
+let routes = [
+  {
+    path: "/",
+    name: "Home",
     component: Layout,
-    redirect: '/home',
-    children: [{
-        path: 'home',
-        name: 'home',
-        component: () => import('@/views/home/index')
+    redirect: "/home",
+    children: [
+      {
+        path: "home",
+        name: "home",
+        component: () => import("@/views/home/index"),
       },
-    ]
-  }
-]
+    ],
+  },
+  {
+    path: "/game",
+    name: "Game",
+    component: () => import("@/views/game/index"),
+  },
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
